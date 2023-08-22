@@ -1,0 +1,202 @@
+:root {
+    --primaryColor: #83c434;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* Nav Bar */
+  nav {
+    display: flex;
+    justify-content: space-around;
+    height: 4rem;
+    background-color: #929292;
+  }
+  
+  #logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  #logo p {
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
+  
+  #nav-item {
+    width: 45%;
+  }
+  
+  #nav-item ul {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  #nav-item ul li {
+    list-style-type: none;
+    text-transform: uppercase;
+    position: relative;
+    font-weight: bold;
+  }
+  
+  #nav-item > ul > li:hover {
+    cursor: pointer;
+    color: var(--primaryColor);
+  }
+  
+  @media screen and (max-width: 786px) {
+    #mob {
+      position: absolute;
+    }
+  
+    nav label {
+      position: absolute;
+      right: 2rem;
+      top: 13px;
+    }
+  
+    .line {
+      width: 2rem;
+      height: 5px;
+      background-color: black;
+      margin: 5px 0;
+      transition: 0.5s;
+    }
+  
+    input[type="checkbox"]:checked + label > .top {
+      transform: translatey(10px) rotate(45deg);
+    }
+  
+    input[type="checkbox"]:checked + label > .middle {
+      transform: rotate(45deg);
+    }
+  
+    input[type="checkbox"]:checked + label > .bottom {
+      transform: translatey(-10px) rotate(-45deg);
+    }
+  
+    #nav-item ul {
+      visibility: hidden;
+      position: absolute;
+      flex-direction: column;
+      width: 200px;
+      height: 400px;
+      right: 0;
+      top: 4rem;
+      background-color: #929292;
+      backdrop-filter: blur(50px);
+    }
+  
+    #nav-item li {
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  
+    input[type="checkbox"]:checked ~ ul {
+      visibility: visible !important;
+    }
+  }
+  
+  @media screen and (min-width: 786px) {
+    #nav-item > ul > li::after {
+      content: "";
+      width: 100%;
+      background-color: #83c434;
+      position: absolute;
+      bottom: -1.4rem;
+      left: 0;
+    }
+  
+    #nav-item > ul > li:hover::after {
+      height: 3px;
+    }
+  
+    #nav-item > ul > li.active {
+      color: var(--primaryColor);
+    }
+  
+    #nav-item > ul > li.active::after {
+      height: 3px;
+    }
+  }
+  
+  #mob {
+    display: none;
+  }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(banner.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(10px);
+  }
+  
+  main {
+    margin: auto;
+    text-align: center;
+    color: white;
+    margin-top: 25vh;
+  }
+  
+  main h1 {
+    margin: 20px auto;
+    font-size: 3rem;
+  }
+  
+  main p {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 0 50px;
+  }
+  
+  button {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    margin: 20px;
+    transition: 0.5s;
+    font-weight: bold;
+  }
+  
+  .first {
+    background-color: var(--primaryColor);
+    color: white;
+    border: none;
+  }
+  
+  .first:hover {
+    background-color: white;
+    border: 1px solid var(--primaryColor);
+    color: var(--primaryColor);
+  }
+  
+  .second {
+    background-color: white;
+    border: 1px solid var(--primaryColor);
+    color: var(--primaryColor);
+  }
+  
+  .second:hover {
+    background-color: var(--primaryColor);
+    color: white;
+  }
+  
+  @media screen and (max-width: 786px) {
+    main h2 {
+      font-size: 1.5rem;
+    }
+  
+    main h1 {
+      font-size: 2.5rem;
+    }
+  }
